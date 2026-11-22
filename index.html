@@ -26,10 +26,10 @@
         .header h1 { font-size: 1.4rem; font-weight: 700; }
         .btn-icon { background: var(--card); border: 1px solid var(--card-light); color: var(--accent); padding: 8px 14px; border-radius: 10px; font-weight: 600; cursor: pointer; }
 
-        /* Imagen del auto con input táctil real encima */
+        /* Imagen del auto con selector táctil nativo */
         .car-photo-container { position: relative; width: 100%; height: 210px; background: var(--card); border-radius: 16px; overflow: hidden; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--card-light); }
         .car-photo-container img { width: 100%; height: 100%; object-fit: cover; display: none; }
-        .photo-placeholder { text-align: center; color: var(--text-muted); padding: 20px; }
+        .photo-placeholder { text-align: center; color: var(--text-muted); padding: 20px; pointer-events: none; }
         .photo-visual-btn { position: absolute; bottom: 12px; right: 12px; background: rgba(15, 23, 42, 0.92); color: white; border: 1px solid var(--accent); padding: 8px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; pointer-events: none; z-index: 2; }
         .real-file-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 10; }
 
@@ -74,7 +74,7 @@
 <body>
 
     <div class="header">
-        <h1 id="carTitle">Mi Auto</h1>
+        <h1 id="carTitle">Nissan Versa 2026</h1>
         <button class="btn-icon" type="button" id="btnOpenConfig">⚙️ Configurar</button>
     </div>
 
@@ -82,9 +82,9 @@
     <div class="car-photo-container">
         <img id="carImage" alt="Mi Auto">
         <div class="photo-placeholder" id="photoPlaceholder">
-            📷 Toca cualquier parte de este recuadro para elegir la foto de tu carro
+            📷 Toca este recuadro para elegir la foto de tu carro
         </div>
-        <div class="photo-visual-btn">📷 Elegir foto</div>
+        <div class="photo-visual-btn">📷 Subir foto</div>
         <input type="file" id="photoInput" accept="image/*" class="real-file-input">
     </div>
 
@@ -161,7 +161,7 @@
         </div>
     </div>
 
-    <!-- Modal de Configuración -->
+    <!-- Modal de Configuración Completo -->
     <div class="modal" id="configModal">
         <div class="modal-content">
             <h2 style="margin-bottom: 10px;">Configurar Mi Auto</h2>
@@ -176,6 +176,3 @@
             <input type="number" id="cfgDownPayment" class="form-input" placeholder="Ej. 50000">
 
             <label class="field-label">Total de mensualidades / pagos pactados</label>
-            <input type="number" id="cfgTotalPayments" class="form-input" placeholder="Ej. 48">
-
-            
