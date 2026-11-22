@@ -30,7 +30,7 @@
         .car-photo-container { position: relative; width: 100%; height: 200px; background: var(--card); border-radius: 16px; overflow: hidden; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--card-light); cursor: pointer; }
         .car-photo-container img { width: 100%; height: 100%; object-fit: cover; display: none; }
         .photo-placeholder { text-align: center; color: var(--text-muted); padding: 20px; }
-        .photo-btn { position: absolute; bottom: 10px; right: 10px; background: rgba(15, 23, 42, 0.8); color: white; border: 1px solid var(--card-light); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; }
+        .photo-btn { position: absolute; bottom: 10px; right: 10px; background: rgba(15, 23, 42, 0.85); color: white; border: 1px solid var(--card-light); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; }
 
         /* Tarjetas */
         .card { background: var(--card); border-radius: 16px; padding: 16px; margin-bottom: 16px; }
@@ -74,7 +74,7 @@
 
     <div class="header">
         <h1 id="carTitle">Mi Auto</h1>
-        <button class="btn-icon" onclick="openModal()">⚙️ Configurar</button>
+        <button class="btn-icon" type="button" onclick="openModal()">⚙️ Configurar</button>
     </div>
 
     <!-- Foto del carro -->
@@ -139,9 +139,9 @@
         </div>
         <div style="display: flex; gap: 8px; margin-top: 10px;">
             <input type="number" id="newKmInput" placeholder="Actualizar km actual..." style="margin-top:0;">
-            <button class="btn-icon" onclick="updateKm()" style="white-space: nowrap;">Actualizar</button>
+            <button class="btn-icon" type="button" onclick="updateKm()" style="white-space: nowrap;">Actualizar</button>
         </div>
-        <button class="secondary-btn" onclick="resetService()">✅ Registrar Mantenimiento Realizado (+5,000 km)</button>
+        <button class="secondary-btn" type="button" onclick="resetService()">✅ Registrar Mantenimiento Realizado (+5,000 km)</button>
     </div>
 
     <!-- Registrar Pago -->
@@ -149,7 +149,7 @@
         <div class="card-title"><span>Registrar Nuevo Pago</span></div>
         <input type="number" id="paymentAmount" placeholder="Monto del pago ($)">
         <input type="text" id="paymentNote" placeholder="Nota (Ej. Mensualidad 4, Abono capital...)">
-        <button class="primary-btn" onclick="addPayment()">➕ Registrar Pago</button>
+        <button class="primary-btn" type="button" onclick="addPayment()">➕ Registrar Pago</button>
     </div>
 
     <!-- Historial de Pagos -->
@@ -183,5 +183,4 @@
             <label>Kilometraje del último servicio (0 si es nuevo)</label>
             <input type="number" id="cfgLastServiceKm" placeholder="Ej. 0">
 
-            <button class="primary-btn" onclick="saveConfig()">Guardar Configuración</button>
             
